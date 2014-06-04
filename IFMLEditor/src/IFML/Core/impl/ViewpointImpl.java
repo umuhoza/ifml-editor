@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *
  * @generated
  */
-public class ViewpointImpl extends NamedElementImpl implements Viewpoint {
+public class ViewpointImpl extends IFMLNamedElementImpl implements Viewpoint {
 	/**
 	 * The cached value of the '{@link #getInteractionFlowModelElements() <em>Interaction Flow Model Elements</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -147,7 +147,7 @@ public class ViewpointImpl extends NamedElementImpl implements Viewpoint {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-		@Override
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.VIEWPOINT__INTERACTION_FLOW_MODEL_ELEMENTS:

@@ -19,7 +19,7 @@ package IFML.Core;
  * @model
  * @generated
  */
-public interface ActivityConcept extends NamedElement {
+public interface ActivityConcept extends IFMLNamedElement {
 	/**
 	 * Returns the value of the '<em><b>Module Definition</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link IFML.Core.ModuleDefinition#getActivityConcept <em>Activity Concept</em>}'.

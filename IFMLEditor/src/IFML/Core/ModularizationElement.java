@@ -19,7 +19,7 @@ package IFML.Core;
  * @model
  * @generated
  */
-public interface ModularizationElement extends NamedElement, InteractionFlowModelElement {
+public interface ModularizationElement extends InteractionFlowModelElement, IFMLNamedElement {
 	/**
 	 * Returns the value of the '<em><b>Module Package</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link IFML.Core.ModulePackage#getModularizationElements <em>Modularization Elements</em>}'.

@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface InteractionFlowModel extends NamedElement {
+public interface InteractionFlowModel extends Element {
 	/**
 	 * Returns the value of the '<em><b>Interaction Flow Model Elements</b></em>' containment reference list.
 	 * The list contents are of type {@link IFML.Core.InteractionFlowModelElement}.

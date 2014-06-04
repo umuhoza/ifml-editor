@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class InteractionFlowModelImpl extends NamedElementImpl implements InteractionFlowModel {
+public class InteractionFlowModelImpl extends ElementImpl implements InteractionFlowModel {
 	/**
 	 * The cached value of the '{@link #getInteractionFlowModelElements() <em>Interaction Flow Model Elements</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -107,7 +107,7 @@ public class InteractionFlowModelImpl extends NamedElementImpl implements Intera
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-		@Override
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.INTERACTION_FLOW_MODEL__INTERACTION_FLOW_MODEL_ELEMENTS:

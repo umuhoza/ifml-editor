@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ContextDimensionImpl extends NamedElementImpl implements ContextDimension {
+public class ContextDimensionImpl extends IFMLNamedElementImpl implements ContextDimension {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

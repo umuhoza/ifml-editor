@@ -481,6 +481,15 @@ public interface CoreFactory extends EFactory {
 	DomainElement createDomainElement();
 
 	/**
+	 * Returns a new object of class '<em>IFML Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>IFML Named Element</em>'.
+	 * @generated
+	 */
+	IFMLNamedElement createIFMLNamedElement();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

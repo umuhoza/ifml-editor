@@ -5,11 +5,16 @@ package IFML.Core.impl;
 import IFML.Core.CorePackage;
 import IFML.Core.DomainElement;
 import IFML.Core.DomainModel;
+
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -26,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class DomainModelImpl extends NamedElementImpl implements DomainModel {
+public class DomainModelImpl extends IFMLNamedElementImpl implements DomainModel {
 	/**
 	 * The cached value of the '{@link #getDomainElements() <em>Domain Elements</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -102,7 +107,7 @@ public class DomainModelImpl extends NamedElementImpl implements DomainModel {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-		@Override
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.DOMAIN_MODEL__DOMAIN_ELEMENTS:

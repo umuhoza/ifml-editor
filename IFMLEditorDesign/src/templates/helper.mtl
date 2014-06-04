@@ -1,3 +1,4 @@
+[comment encoding = UTF-8 /]
 [module helper('http://www.omg.org/spec/20130218/core', 'http://www.omg.org/spec/20130218/ext')/]
 
 [query public getInteractionFlowModel(ifml_model : IFMLModel) : InteractionFlowModel = 
@@ -196,7 +197,7 @@
 /]
 
 [query public getExtContainer(v :OclAny) : String = 
-	
+
 	if (v.oclIsTypeOf(IFMLWindow)) 
 	then getWindowLabel(getWindow(v)) + '«Window» '
 	else 
@@ -212,22 +213,22 @@
 /]
 
 [query public getViewContainer(v :OclAny) : ViewContainer = 
-	
+
 	v.oclAsType(ViewContainer)
 /]
 
 [query public getWindow(v :OclAny) : IFMLWindow = 
-	
+
 	v.oclAsType(IFMLWindow)
 /]
 
 [query public getMenu(v :OclAny) : IFMLMenu = 
-	
+
 	v.oclAsType(IFMLMenu)
 /]
 
 [query public getViewComponentLabel(v :OclAny) : String = 
-	
+
 	if (v.oclIsTypeOf(ViewComponent)) 
 	then '«ViewComponent» '
 	else 
@@ -247,7 +248,7 @@
 /]
 
 [query public getThrowingEventLabel(v :OclAny) : String = 
-	
+
 	if (v.oclIsTypeOf(ThrowingEvent)) 
 	then '«ThrowingEvent» '
 	else 
@@ -264,7 +265,7 @@
 /]
 
 [query public getCatchingEventLabel(v :OclAny) : String = 
-	
+
 	if (v.oclIsTypeOf(CatchingEvent)) 
 	then '«CatchingEvent» '
 	else 
@@ -305,7 +306,7 @@
 /]
 
 [query public getSystemEvent(v :OclAny) : String = 
-	
+
 	if (v.oclIsTypeOf(SystemEvent)) 
 	then '«SystemEvent» '
 	else 
@@ -317,7 +318,7 @@
 /]
 
 [query public getViewElementEvent(v :OclAny) : String = 
-	
+
 	if (v.oclIsTypeOf(ViewElementEvent)) 
 	then '«ViewElementEvent» '
 	else 
@@ -333,7 +334,7 @@
 /]
 
 [query public getViewComponentPartLabel(v :OclAny) : String = 
-	
+
 	if (v.oclIsTypeOf(ViewComponentPart)) 
 	then '«ViewComponentPart» '
 	else 
@@ -355,7 +356,12 @@
 					else 
 						if (v.oclIsTypeOf(ConditionalExpression)) 
 						then '«ConditionalExpression» '
-						else 'ERRORE'
+						else
+							if(v.oclIsTypeOf(VisualizationAttribute))
+							then  '«VisualisationAttribute» '
+							else
+								'ERRORE'
+							endif
 						endif
 					endif
 				endif

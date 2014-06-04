@@ -4,6 +4,8 @@ package IFML.Core;
 
 import IFML.DataTypes.Direction;
 
+import org.eclipse.uml2.uml.TypedElement;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>IFML Parameter</b></em>'.
@@ -21,7 +23,7 @@ import IFML.DataTypes.Direction;
  * @model
  * @generated
  */
-public interface IFMLParameter extends InteractionFlowModelElement, NamedElement {
+public interface IFMLParameter extends InteractionFlowModelElement, IFMLNamedElement, TypedElement {
 	/**
 	 * Returns the value of the '<em><b>Direction</b></em>' attribute.
 	 * The default value is <code>"in"</code>.

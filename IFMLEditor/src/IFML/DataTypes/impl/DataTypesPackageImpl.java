@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**

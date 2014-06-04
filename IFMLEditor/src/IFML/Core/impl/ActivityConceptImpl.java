@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class ActivityConceptImpl extends NamedElementImpl implements ActivityConcept {
+public class ActivityConceptImpl extends IFMLNamedElementImpl implements ActivityConcept {
 	/**
 	 * The cached value of the '{@link #getModuleDefinition() <em>Module Definition</em>}' reference.
 	 * <!-- begin-user-doc -->

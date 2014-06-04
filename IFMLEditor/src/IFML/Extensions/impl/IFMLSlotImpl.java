@@ -20,6 +20,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.uml2.uml.Type;
+import org.eclipse.uml2.uml.TypedElement;
+import org.eclipse.uml2.uml.UMLPackage;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>IFML Slot</b></em>'.
@@ -27,6 +31,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link IFML.Extensions.impl.IFMLSlotImpl#getType <em>Type</em>}</li>
  *   <li>{@link IFML.Extensions.impl.IFMLSlotImpl#getDirection <em>Direction</em>}</li>
  *   <li>{@link IFML.Extensions.impl.IFMLSlotImpl#getDefaultValue <em>Default Value</em>}</li>
  * </ul>
@@ -35,6 +40,16 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class IFMLSlotImpl extends ViewComponentPartImpl implements IFMLSlot {
+	/**
+	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected Type type;
+
 	/**
 	 * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -82,6 +97,44 @@ public class IFMLSlotImpl extends ViewComponentPartImpl implements IFMLSlot {
 	@Override
 	protected EClass eStaticClass() {
 		return ExtensionsPackage.Literals.IFML_SLOT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Type getType() {
+		if (type != null && type.eIsProxy()) {
+			InternalEObject oldType = (InternalEObject)type;
+			type = (Type)eResolveProxy(oldType);
+			if (type != oldType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExtensionsPackage.IFML_SLOT__TYPE, oldType, type));
+			}
+		}
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Type basicGetType() {
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setType(Type newType) {
+		Type oldType = type;
+		type = newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExtensionsPackage.IFML_SLOT__TYPE, oldType, type));
 	}
 
 	/**
@@ -151,6 +204,9 @@ public class IFMLSlotImpl extends ViewComponentPartImpl implements IFMLSlot {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ExtensionsPackage.IFML_SLOT__TYPE:
+				if (resolve) return getType();
+				return basicGetType();
 			case ExtensionsPackage.IFML_SLOT__DIRECTION:
 				return getDirection();
 			case ExtensionsPackage.IFML_SLOT__DEFAULT_VALUE:
@@ -168,6 +224,9 @@ public class IFMLSlotImpl extends ViewComponentPartImpl implements IFMLSlot {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ExtensionsPackage.IFML_SLOT__TYPE:
+				setType((Type)newValue);
+				return;
 			case ExtensionsPackage.IFML_SLOT__DIRECTION:
 				setDirection((Direction)newValue);
 				return;
@@ -186,6 +245,9 @@ public class IFMLSlotImpl extends ViewComponentPartImpl implements IFMLSlot {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ExtensionsPackage.IFML_SLOT__TYPE:
+				setType((Type)null);
+				return;
 			case ExtensionsPackage.IFML_SLOT__DIRECTION:
 				setDirection(DIRECTION_EDEFAULT);
 				return;
@@ -204,6 +266,8 @@ public class IFMLSlotImpl extends ViewComponentPartImpl implements IFMLSlot {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ExtensionsPackage.IFML_SLOT__TYPE:
+				return type != null;
 			case ExtensionsPackage.IFML_SLOT__DIRECTION:
 				return direction != DIRECTION_EDEFAULT;
 			case ExtensionsPackage.IFML_SLOT__DEFAULT_VALUE:
@@ -219,6 +283,12 @@ public class IFMLSlotImpl extends ViewComponentPartImpl implements IFMLSlot {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == TypedElement.class) {
+			switch (derivedFeatureID) {
+				case ExtensionsPackage.IFML_SLOT__TYPE: return UMLPackage.TYPED_ELEMENT__TYPE;
+				default: return -1;
+			}
+		}
 		if (baseClass == IFMLParameter.class) {
 			switch (derivedFeatureID) {
 				case ExtensionsPackage.IFML_SLOT__DIRECTION: return CorePackage.IFML_PARAMETER__DIRECTION;
@@ -236,6 +306,12 @@ public class IFMLSlotImpl extends ViewComponentPartImpl implements IFMLSlot {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == TypedElement.class) {
+			switch (baseFeatureID) {
+				case UMLPackage.TYPED_ELEMENT__TYPE: return ExtensionsPackage.IFML_SLOT__TYPE;
+				default: return -1;
+			}
+		}
 		if (baseClass == IFMLParameter.class) {
 			switch (baseFeatureID) {
 				case CorePackage.IFML_PARAMETER__DIRECTION: return ExtensionsPackage.IFML_SLOT__DIRECTION;

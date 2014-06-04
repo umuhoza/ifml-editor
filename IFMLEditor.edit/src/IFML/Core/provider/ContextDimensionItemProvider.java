@@ -25,7 +25,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * @generated
  */
 public class ContextDimensionItemProvider
-	extends NamedElementItemProvider
+	extends IFMLNamedElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,

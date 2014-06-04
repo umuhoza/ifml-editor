@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface IFMLModel extends NamedElement {
+public interface IFMLModel extends IFMLNamedElement {
 	/**
 	 * Returns the value of the '<em><b>Interaction Flow Model</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

@@ -33,6 +33,7 @@ import IFML.Core.FeatureConcept;
 import IFML.Core.IFMLAction;
 import IFML.Core.IFMLModel;
 import IFML.Core.IFMLModule;
+import IFML.Core.IFMLNamedElement;
 import IFML.Core.IFMLParameter;
 import IFML.Core.IFMLPort;
 import IFML.Core.InteractionFlow;
@@ -43,7 +44,6 @@ import IFML.Core.InteractionFlowModelElement;
 import IFML.Core.ModularizationElement;
 import IFML.Core.ModuleDefinition;
 import IFML.Core.ModulePackage;
-import IFML.Core.NamedElement;
 import IFML.Core.NavigationFlow;
 import IFML.Core.ParameterBinding;
 import IFML.Core.ParameterBindingGroup;
@@ -73,10 +73,13 @@ import IFML.Extensions.impl.ExtensionsPackageImpl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -127,13 +130,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * @generated
 	 */
 	private EClass domainModelEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass namedElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -493,6 +489,13 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	private EClass domainElementEClass = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass ifmlNamedElementEClass = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -697,24 +700,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 */
 	public EReference getDomainModel_DomainElements() {
 		return (EReference)domainModelEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getNamedElement() {
-		return namedElementEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNamedElement_Name() {
-		return (EAttribute)namedElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1820,6 +1805,60 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getIFMLNamedElement() {
+		return ifmlNamedElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIFMLNamedElement__GetClientDependency__String() {
+		return ifmlNamedElementEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIFMLNamedElement__GetClientDependency__String_boolean_EClass() {
+		return ifmlNamedElementEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIFMLNamedElement__CreateNameExpression__String_Type() {
+		return ifmlNamedElementEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIFMLNamedElement__CreateOwnedComment() {
+		return ifmlNamedElementEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIFMLNamedElement__Create__EClass() {
+		return ifmlNamedElementEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public CoreFactory getCoreFactory() {
 		return (CoreFactory)getEFactoryInstance();
 	}
@@ -1863,9 +1902,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 
 		domainModelEClass = createEClass(DOMAIN_MODEL);
 		createEReference(domainModelEClass, DOMAIN_MODEL__DOMAIN_ELEMENTS);
-
-		namedElementEClass = createEClass(NAMED_ELEMENT);
-		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
 
 		portDefinitionEClass = createEClass(PORT_DEFINITION);
 		createEReference(portDefinitionEClass, PORT_DEFINITION__PORTS);
@@ -2039,6 +2075,13 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		createEReference(activityConceptEClass, ACTIVITY_CONCEPT__MODULE_DEFINITION);
 
 		domainElementEClass = createEClass(DOMAIN_ELEMENT);
+
+		ifmlNamedElementEClass = createEClass(IFML_NAMED_ELEMENT);
+		createEOperation(ifmlNamedElementEClass, IFML_NAMED_ELEMENT___GET_CLIENT_DEPENDENCY__STRING);
+		createEOperation(ifmlNamedElementEClass, IFML_NAMED_ELEMENT___GET_CLIENT_DEPENDENCY__STRING_BOOLEAN_ECLASS);
+		createEOperation(ifmlNamedElementEClass, IFML_NAMED_ELEMENT___CREATE_NAME_EXPRESSION__STRING_TYPE);
+		createEOperation(ifmlNamedElementEClass, IFML_NAMED_ELEMENT___CREATE_OWNED_COMMENT);
+		createEOperation(ifmlNamedElementEClass, IFML_NAMED_ELEMENT___CREATE__ECLASS);
 	}
 
 	/**
@@ -2067,6 +2110,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		// Obtain other dependent packages
 		DataTypesPackage theDataTypesPackage = (DataTypesPackage)EPackage.Registry.INSTANCE.getEPackage(DataTypesPackage.eNS_URI);
 		UMLPackage theUMLPackage = (UMLPackage)EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -2078,33 +2122,32 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		systemEventEClass.getESuperTypes().add(this.getCatchingEvent());
 		parameterBindingEClass.getESuperTypes().add(this.getInteractionFlowModelElement());
 		actionEventEClass.getESuperTypes().add(this.getCatchingEvent());
-		domainModelEClass.getESuperTypes().add(this.getNamedElement());
-		namedElementEClass.getESuperTypes().add(this.getElement());
+		domainModelEClass.getESuperTypes().add(this.getIFMLNamedElement());
 		portDefinitionEClass.getESuperTypes().add(this.getInteractionFlowElement());
 		contentBindingEClass.getESuperTypes().add(this.getViewComponentPart());
 		viewElementEClass.getESuperTypes().add(this.getInteractionFlowElement());
 		expressionEClass.getESuperTypes().add(this.getInteractionFlowModelElement());
 		dynamicBehaviorEClass.getESuperTypes().add(this.getContentBinding());
-		viewpointEClass.getESuperTypes().add(this.getNamedElement());
+		viewpointEClass.getESuperTypes().add(this.getIFMLNamedElement());
 		dataFlowEClass.getESuperTypes().add(this.getInteractionFlow());
 		viewComponentPartEClass.getESuperTypes().add(this.getInteractionFlowElement());
 		viewContainerEClass.getESuperTypes().add(this.getViewElement());
 		activationExpressionEClass.getESuperTypes().add(this.getBooleanExpression());
-		interactionFlowModelEClass.getESuperTypes().add(this.getNamedElement());
-		contextDimensionEClass.getESuperTypes().add(this.getNamedElement());
-		ifmlModelEClass.getESuperTypes().add(this.getNamedElement());
+		interactionFlowModelEClass.getESuperTypes().add(this.getElement());
+		contextDimensionEClass.getESuperTypes().add(this.getIFMLNamedElement());
+		ifmlModelEClass.getESuperTypes().add(this.getIFMLNamedElement());
 		moduleDefinitionEClass.getESuperTypes().add(this.getModularizationElement());
 		booleanExpressionEClass.getESuperTypes().add(this.getExpression());
-		interactionFlowElementEClass.getESuperTypes().add(this.getNamedElement());
 		interactionFlowElementEClass.getESuperTypes().add(this.getInteractionFlowModelElement());
+		interactionFlowElementEClass.getESuperTypes().add(this.getIFMLNamedElement());
 		ifmlActionEClass.getESuperTypes().add(this.getInteractionFlowElement());
-		ifmlActionEClass.getESuperTypes().add(this.getNamedElement());
 		navigationFlowEClass.getESuperTypes().add(this.getInteractionFlow());
 		parameterBindingGroupEClass.getESuperTypes().add(this.getInteractionFlowModelElement());
 		constraintEClass.getESuperTypes().add(this.getBooleanExpression());
 		viewComponentEClass.getESuperTypes().add(this.getViewElement());
 		ifmlParameterEClass.getESuperTypes().add(this.getInteractionFlowModelElement());
-		ifmlParameterEClass.getESuperTypes().add(this.getNamedElement());
+		ifmlParameterEClass.getESuperTypes().add(this.getIFMLNamedElement());
+		ifmlParameterEClass.getESuperTypes().add(theUMLPackage.getTypedElement());
 		dataBindingEClass.getESuperTypes().add(this.getContentBinding());
 		conditionalExpressionEClass.getESuperTypes().add(this.getExpression());
 		conditionalExpressionEClass.getESuperTypes().add(this.getViewComponentPart());
@@ -2114,15 +2157,14 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		interactionFlowModelElementEClass.getESuperTypes().add(this.getElement());
 		viewElementEventEClass.getESuperTypes().add(this.getCatchingEvent());
 		modulePackageEClass.getESuperTypes().add(this.getModularizationElement());
-		modularizationElementEClass.getESuperTypes().add(this.getNamedElement());
 		modularizationElementEClass.getESuperTypes().add(this.getInteractionFlowModelElement());
-		ifmlModuleEClass.getESuperTypes().add(this.getNamedElement());
+		modularizationElementEClass.getESuperTypes().add(this.getIFMLNamedElement());
 		ifmlModuleEClass.getESuperTypes().add(this.getInteractionFlowElement());
 		ifmlPortEClass.getESuperTypes().add(this.getInteractionFlowElement());
 		catchingEventEClass.getESuperTypes().add(this.getEvent());
 		throwingEventEClass.getESuperTypes().add(this.getEvent());
 		bpmnActivityConceptEClass.getESuperTypes().add(this.getActivityConcept());
-		contextVariableEClass.getESuperTypes().add(this.getNamedElement());
+		contextVariableEClass.getESuperTypes().add(this.getIFMLNamedElement());
 		simpleContextVariableEClass.getESuperTypes().add(this.getContextVariable());
 		dataContextVariableEClass.getESuperTypes().add(this.getContextVariable());
 		domainConceptEClass.getESuperTypes().add(this.getDomainElement());
@@ -2133,8 +2175,9 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		umlBehavioralFeatureEClass.getESuperTypes().add(this.getBehavioralFeatureConcept());
 		umlDomainConceptEClass.getESuperTypes().add(this.getDomainConcept());
 		umlStructuralFeatureEClass.getESuperTypes().add(this.getFeatureConcept());
-		activityConceptEClass.getESuperTypes().add(this.getNamedElement());
-		domainElementEClass.getESuperTypes().add(this.getNamedElement());
+		activityConceptEClass.getESuperTypes().add(this.getIFMLNamedElement());
+		domainElementEClass.getESuperTypes().add(this.getIFMLNamedElement());
+		ifmlNamedElementEClass.getESuperTypes().add(theUMLPackage.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(interactionFlowEClass, InteractionFlow.class, "InteractionFlow", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2157,9 +2200,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 
 		initEClass(domainModelEClass, DomainModel.class, "DomainModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDomainModel_DomainElements(), this.getDomainElement(), null, "domainElements", null, 0, -1, DomainModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 1, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(portDefinitionEClass, PortDefinition.class, "PortDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPortDefinition_Ports(), this.getIFMLPort(), this.getIFMLPort_PortDefinition(), "ports", null, 0, -1, PortDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2333,6 +2373,25 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		initEReference(getActivityConcept_ModuleDefinition(), this.getModuleDefinition(), this.getModuleDefinition_ActivityConcept(), "moduleDefinition", null, 1, 1, ActivityConcept.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(domainElementEClass, DomainElement.class, "DomainElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(ifmlNamedElementEClass, IFMLNamedElement.class, "IFMLNamedElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		EOperation op = initEOperation(getIFMLNamedElement__GetClientDependency__String(), theUMLPackage.getDependency(), "getClientDependency", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getIFMLNamedElement__GetClientDependency__String_boolean_EClass(), theUMLPackage.getDependency(), "getClientDependency", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "ignoreCase", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEClass(), "eClass", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getIFMLNamedElement__CreateNameExpression__String_Type(), theUMLPackage.getStringExpression(), "createNameExpression", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theUMLPackage.getType(), "type", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getIFMLNamedElement__CreateOwnedComment(), theUMLPackage.getComment(), "createOwnedComment", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getIFMLNamedElement__Create__EClass(), ecorePackage.getEObject(), "create", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEClass(), "eClass", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *
  * @generated
  */
-public class ContextVariableImpl extends NamedElementImpl implements ContextVariable {
+public class ContextVariableImpl extends IFMLNamedElementImpl implements ContextVariable {
 	/**
 	 * The default value of the '{@link #getScope() <em>Scope</em>}' attribute.
 	 * <!-- begin-user-doc -->

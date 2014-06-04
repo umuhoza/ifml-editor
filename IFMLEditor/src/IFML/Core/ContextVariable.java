@@ -21,7 +21,7 @@ import IFML.DataTypes.ContextVariableScope;
  * @model
  * @generated
  */
-public interface ContextVariable extends NamedElement {
+public interface ContextVariable extends IFMLNamedElement {
 	/**
 	 * Returns the value of the '<em><b>Context</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link IFML.Core.Context#getContextVariables <em>Context Variables</em>}'.

@@ -4,11 +4,7 @@ package IFML.Core.impl;
 
 import IFML.Core.CorePackage;
 import IFML.Core.IFMLModule;
-import IFML.Core.IFMLParameter;
 import IFML.Core.IFMLPort;
-import IFML.Core.InteractionFlow;
-import IFML.Core.InteractionFlowElement;
-import IFML.Core.InteractionFlowModelElement;
 import IFML.Core.ModuleDefinition;
 
 import java.util.Collection;
@@ -23,8 +19,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -35,9 +29,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link IFML.Core.impl.IFMLModuleImpl#getParameters <em>Parameters</em>}</li>
- *   <li>{@link IFML.Core.impl.IFMLModuleImpl#getOutInteractionFlows <em>Out Interaction Flows</em>}</li>
- *   <li>{@link IFML.Core.impl.IFMLModuleImpl#getInInteractionFlows <em>In Interaction Flows</em>}</li>
  *   <li>{@link IFML.Core.impl.IFMLModuleImpl#getModuleDefinition <em>Module Definition</em>}</li>
  *   <li>{@link IFML.Core.impl.IFMLModuleImpl#getPorts <em>Ports</em>}</li>
  * </ul>
@@ -45,37 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class IFMLModuleImpl extends NamedElementImpl implements IFMLModule {
-	/**
-	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParameters()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<IFMLParameter> parameters;
-
-	/**
-	 * The cached value of the '{@link #getOutInteractionFlows() <em>Out Interaction Flows</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOutInteractionFlows()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<InteractionFlow> outInteractionFlows;
-
-	/**
-	 * The cached value of the '{@link #getInInteractionFlows() <em>In Interaction Flows</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInInteractionFlows()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<InteractionFlow> inInteractionFlows;
-
+public class IFMLModuleImpl extends InteractionFlowElementImpl implements IFMLModule {
 	/**
 	 * The cached value of the '{@link #getModuleDefinition() <em>Module Definition</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -113,42 +74,6 @@ public class IFMLModuleImpl extends NamedElementImpl implements IFMLModule {
 	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.IFML_MODULE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<IFMLParameter> getParameters() {
-		if (parameters == null) {
-			parameters = new EObjectContainmentEList<IFMLParameter>(IFMLParameter.class, this, CorePackage.IFML_MODULE__PARAMETERS);
-		}
-		return parameters;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<InteractionFlow> getOutInteractionFlows() {
-		if (outInteractionFlows == null) {
-			outInteractionFlows = new EObjectContainmentWithInverseEList<InteractionFlow>(InteractionFlow.class, this, CorePackage.IFML_MODULE__OUT_INTERACTION_FLOWS, CorePackage.INTERACTION_FLOW__SOURCE_INTERACTION_FLOW_ELEMENT);
-		}
-		return outInteractionFlows;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<InteractionFlow> getInInteractionFlows() {
-		if (inInteractionFlows == null) {
-			inInteractionFlows = new EObjectWithInverseResolvingEList<InteractionFlow>(InteractionFlow.class, this, CorePackage.IFML_MODULE__IN_INTERACTION_FLOWS, CorePackage.INTERACTION_FLOW__TARGET_INTERACTION_FLOW_ELEMENT);
-		}
-		return inInteractionFlows;
 	}
 
 	/**
@@ -229,13 +154,9 @@ public class IFMLModuleImpl extends NamedElementImpl implements IFMLModule {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-		@Override
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CorePackage.IFML_MODULE__OUT_INTERACTION_FLOWS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutInteractionFlows()).basicAdd(otherEnd, msgs);
-			case CorePackage.IFML_MODULE__IN_INTERACTION_FLOWS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getInInteractionFlows()).basicAdd(otherEnd, msgs);
 			case CorePackage.IFML_MODULE__MODULE_DEFINITION:
 				if (moduleDefinition != null)
 					msgs = ((InternalEObject)moduleDefinition).eInverseRemove(this, CorePackage.MODULE_DEFINITION__MODULES, ModuleDefinition.class, msgs);
@@ -254,12 +175,6 @@ public class IFMLModuleImpl extends NamedElementImpl implements IFMLModule {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CorePackage.IFML_MODULE__PARAMETERS:
-				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
-			case CorePackage.IFML_MODULE__OUT_INTERACTION_FLOWS:
-				return ((InternalEList<?>)getOutInteractionFlows()).basicRemove(otherEnd, msgs);
-			case CorePackage.IFML_MODULE__IN_INTERACTION_FLOWS:
-				return ((InternalEList<?>)getInInteractionFlows()).basicRemove(otherEnd, msgs);
 			case CorePackage.IFML_MODULE__MODULE_DEFINITION:
 				return basicSetModuleDefinition(null, msgs);
 			case CorePackage.IFML_MODULE__PORTS:
@@ -276,12 +191,6 @@ public class IFMLModuleImpl extends NamedElementImpl implements IFMLModule {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CorePackage.IFML_MODULE__PARAMETERS:
-				return getParameters();
-			case CorePackage.IFML_MODULE__OUT_INTERACTION_FLOWS:
-				return getOutInteractionFlows();
-			case CorePackage.IFML_MODULE__IN_INTERACTION_FLOWS:
-				return getInInteractionFlows();
 			case CorePackage.IFML_MODULE__MODULE_DEFINITION:
 				if (resolve) return getModuleDefinition();
 				return basicGetModuleDefinition();
@@ -297,21 +206,9 @@ public class IFMLModuleImpl extends NamedElementImpl implements IFMLModule {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-		@Override
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CorePackage.IFML_MODULE__PARAMETERS:
-				getParameters().clear();
-				getParameters().addAll((Collection<? extends IFMLParameter>)newValue);
-				return;
-			case CorePackage.IFML_MODULE__OUT_INTERACTION_FLOWS:
-				getOutInteractionFlows().clear();
-				getOutInteractionFlows().addAll((Collection<? extends InteractionFlow>)newValue);
-				return;
-			case CorePackage.IFML_MODULE__IN_INTERACTION_FLOWS:
-				getInInteractionFlows().clear();
-				getInInteractionFlows().addAll((Collection<? extends InteractionFlow>)newValue);
-				return;
 			case CorePackage.IFML_MODULE__MODULE_DEFINITION:
 				setModuleDefinition((ModuleDefinition)newValue);
 				return;
@@ -331,15 +228,6 @@ public class IFMLModuleImpl extends NamedElementImpl implements IFMLModule {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CorePackage.IFML_MODULE__PARAMETERS:
-				getParameters().clear();
-				return;
-			case CorePackage.IFML_MODULE__OUT_INTERACTION_FLOWS:
-				getOutInteractionFlows().clear();
-				return;
-			case CorePackage.IFML_MODULE__IN_INTERACTION_FLOWS:
-				getInInteractionFlows().clear();
-				return;
 			case CorePackage.IFML_MODULE__MODULE_DEFINITION:
 				setModuleDefinition((ModuleDefinition)null);
 				return;
@@ -358,64 +246,12 @@ public class IFMLModuleImpl extends NamedElementImpl implements IFMLModule {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CorePackage.IFML_MODULE__PARAMETERS:
-				return parameters != null && !parameters.isEmpty();
-			case CorePackage.IFML_MODULE__OUT_INTERACTION_FLOWS:
-				return outInteractionFlows != null && !outInteractionFlows.isEmpty();
-			case CorePackage.IFML_MODULE__IN_INTERACTION_FLOWS:
-				return inInteractionFlows != null && !inInteractionFlows.isEmpty();
 			case CorePackage.IFML_MODULE__MODULE_DEFINITION:
 				return moduleDefinition != null;
 			case CorePackage.IFML_MODULE__PORTS:
 				return ports != null && !ports.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == InteractionFlowModelElement.class) {
-			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == InteractionFlowElement.class) {
-			switch (derivedFeatureID) {
-				case CorePackage.IFML_MODULE__PARAMETERS: return CorePackage.INTERACTION_FLOW_ELEMENT__PARAMETERS;
-				case CorePackage.IFML_MODULE__OUT_INTERACTION_FLOWS: return CorePackage.INTERACTION_FLOW_ELEMENT__OUT_INTERACTION_FLOWS;
-				case CorePackage.IFML_MODULE__IN_INTERACTION_FLOWS: return CorePackage.INTERACTION_FLOW_ELEMENT__IN_INTERACTION_FLOWS;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == InteractionFlowModelElement.class) {
-			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == InteractionFlowElement.class) {
-			switch (baseFeatureID) {
-				case CorePackage.INTERACTION_FLOW_ELEMENT__PARAMETERS: return CorePackage.IFML_MODULE__PARAMETERS;
-				case CorePackage.INTERACTION_FLOW_ELEMENT__OUT_INTERACTION_FLOWS: return CorePackage.IFML_MODULE__OUT_INTERACTION_FLOWS;
-				case CorePackage.INTERACTION_FLOW_ELEMENT__IN_INTERACTION_FLOWS: return CorePackage.IFML_MODULE__IN_INTERACTION_FLOWS;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //IFMLModuleImpl

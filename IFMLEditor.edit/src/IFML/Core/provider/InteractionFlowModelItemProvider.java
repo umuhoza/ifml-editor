@@ -32,7 +32,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class InteractionFlowModelItemProvider
-	extends NamedElementItemProvider
+	extends ElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -113,7 +113,7 @@ public class InteractionFlowModelItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((InteractionFlowModel)object).getName();
+		String label = ((InteractionFlowModel)object).getId();
 		return label == null || label.length() == 0 ?
 			getString("_UI_InteractionFlowModel_type") :
 			getString("_UI_InteractionFlowModel_type") + " " + label;

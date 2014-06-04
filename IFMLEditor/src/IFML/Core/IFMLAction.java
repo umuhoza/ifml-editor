@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface IFMLAction extends InteractionFlowElement, NamedElement {
+public interface IFMLAction extends InteractionFlowElement {
 	/**
 	 * Returns the value of the '<em><b>Action Events</b></em>' containment reference list.
 	 * The list contents are of type {@link IFML.Core.ActionEvent}.

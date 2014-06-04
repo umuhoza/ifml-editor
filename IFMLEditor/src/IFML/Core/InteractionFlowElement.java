@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model abstract="true"
  * @generated
  */
-public interface InteractionFlowElement extends NamedElement, InteractionFlowModelElement {
+public interface InteractionFlowElement extends InteractionFlowModelElement, IFMLNamedElement {
 	/**
 	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
 	 * The list contents are of type {@link IFML.Core.IFMLParameter}.

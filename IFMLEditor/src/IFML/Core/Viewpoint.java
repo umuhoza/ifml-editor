@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Viewpoint extends NamedElement {
+public interface Viewpoint extends IFMLNamedElement {
 	/**
 	 * Returns the value of the '<em><b>Interaction Flow Model Elements</b></em>' reference list.
 	 * The list contents are of type {@link IFML.Core.InteractionFlowModelElement}.

@@ -107,6 +107,7 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 			case CorePackage.UML_STRUCTURAL_FEATURE: return createUMLStructuralFeature();
 			case CorePackage.ACTIVITY_CONCEPT: return createActivityConcept();
 			case CorePackage.DOMAIN_ELEMENT: return createDomainElement();
+			case CorePackage.IFML_NAMED_ELEMENT: return createIFMLNamedElement();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -620,6 +621,16 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	public DomainElement createDomainElement() {
 		DomainElementImpl domainElement = new DomainElementImpl();
 		return domainElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IFMLNamedElement createIFMLNamedElement() {
+		IFMLNamedElementImpl ifmlNamedElement = new IFMLNamedElementImpl();
+		return ifmlNamedElement;
 	}
 
 	/**

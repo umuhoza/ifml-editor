@@ -1245,6 +1245,29 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link IFML.Core.IFMLNamedElement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IFMLNamedElementItemProvider ifmlNamedElementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link IFML.Core.IFMLNamedElement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createIFMLNamedElementAdapter() {
+		if (ifmlNamedElementItemProvider == null) {
+			ifmlNamedElementItemProvider = new IFMLNamedElementItemProvider(this);
+		}
+
+		return ifmlNamedElementItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1394,6 +1417,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 		if (umlStructuralFeatureItemProvider != null) umlStructuralFeatureItemProvider.dispose();
 		if (activityConceptItemProvider != null) activityConceptItemProvider.dispose();
 		if (domainElementItemProvider != null) domainElementItemProvider.dispose();
+		if (ifmlNamedElementItemProvider != null) ifmlNamedElementItemProvider.dispose();
 	}
 
 }

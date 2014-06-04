@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface IFMLModule extends NamedElement, InteractionFlowElement {
+public interface IFMLModule extends InteractionFlowElement {
 	/**
 	 * Returns the value of the '<em><b>Module Definition</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link IFML.Core.ModuleDefinition#getModules <em>Modules</em>}'.

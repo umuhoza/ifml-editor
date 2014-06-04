@@ -3,9 +3,15 @@
 package IFML.Core.util;
 
 import IFML.Core.*;
+
+import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.util.Switch;
+
+import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.TypedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,9 +93,12 @@ public class CoreSwitch<T> extends Switch<T> {
 				if (result == null) result = caseCatchingEvent(systemEvent);
 				if (result == null) result = caseEvent(systemEvent);
 				if (result == null) result = caseInteractionFlowElement(systemEvent);
-				if (result == null) result = caseNamedElement(systemEvent);
 				if (result == null) result = caseInteractionFlowModelElement(systemEvent);
+				if (result == null) result = caseIFMLNamedElement(systemEvent);
 				if (result == null) result = caseElement(systemEvent);
+				if (result == null) result = caseNamedElement(systemEvent);
+				if (result == null) result = caseUML_Element(systemEvent);
+				if (result == null) result = caseEModelElement(systemEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -107,24 +116,22 @@ public class CoreSwitch<T> extends Switch<T> {
 				if (result == null) result = caseCatchingEvent(actionEvent);
 				if (result == null) result = caseEvent(actionEvent);
 				if (result == null) result = caseInteractionFlowElement(actionEvent);
-				if (result == null) result = caseNamedElement(actionEvent);
 				if (result == null) result = caseInteractionFlowModelElement(actionEvent);
+				if (result == null) result = caseIFMLNamedElement(actionEvent);
 				if (result == null) result = caseElement(actionEvent);
+				if (result == null) result = caseNamedElement(actionEvent);
+				if (result == null) result = caseUML_Element(actionEvent);
+				if (result == null) result = caseEModelElement(actionEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CorePackage.DOMAIN_MODEL: {
 				DomainModel domainModel = (DomainModel)theEObject;
 				T result = caseDomainModel(domainModel);
+				if (result == null) result = caseIFMLNamedElement(domainModel);
 				if (result == null) result = caseNamedElement(domainModel);
-				if (result == null) result = caseElement(domainModel);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CorePackage.NAMED_ELEMENT: {
-				NamedElement namedElement = (NamedElement)theEObject;
-				T result = caseNamedElement(namedElement);
-				if (result == null) result = caseElement(namedElement);
+				if (result == null) result = caseUML_Element(domainModel);
+				if (result == null) result = caseEModelElement(domainModel);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -132,9 +139,12 @@ public class CoreSwitch<T> extends Switch<T> {
 				PortDefinition portDefinition = (PortDefinition)theEObject;
 				T result = casePortDefinition(portDefinition);
 				if (result == null) result = caseInteractionFlowElement(portDefinition);
-				if (result == null) result = caseNamedElement(portDefinition);
 				if (result == null) result = caseInteractionFlowModelElement(portDefinition);
+				if (result == null) result = caseIFMLNamedElement(portDefinition);
 				if (result == null) result = caseElement(portDefinition);
+				if (result == null) result = caseNamedElement(portDefinition);
+				if (result == null) result = caseUML_Element(portDefinition);
+				if (result == null) result = caseEModelElement(portDefinition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -143,9 +153,12 @@ public class CoreSwitch<T> extends Switch<T> {
 				T result = caseContentBinding(contentBinding);
 				if (result == null) result = caseViewComponentPart(contentBinding);
 				if (result == null) result = caseInteractionFlowElement(contentBinding);
-				if (result == null) result = caseNamedElement(contentBinding);
 				if (result == null) result = caseInteractionFlowModelElement(contentBinding);
+				if (result == null) result = caseIFMLNamedElement(contentBinding);
 				if (result == null) result = caseElement(contentBinding);
+				if (result == null) result = caseNamedElement(contentBinding);
+				if (result == null) result = caseUML_Element(contentBinding);
+				if (result == null) result = caseEModelElement(contentBinding);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -153,9 +166,12 @@ public class CoreSwitch<T> extends Switch<T> {
 				ViewElement viewElement = (ViewElement)theEObject;
 				T result = caseViewElement(viewElement);
 				if (result == null) result = caseInteractionFlowElement(viewElement);
-				if (result == null) result = caseNamedElement(viewElement);
 				if (result == null) result = caseInteractionFlowModelElement(viewElement);
+				if (result == null) result = caseIFMLNamedElement(viewElement);
 				if (result == null) result = caseElement(viewElement);
+				if (result == null) result = caseNamedElement(viewElement);
+				if (result == null) result = caseUML_Element(viewElement);
+				if (result == null) result = caseEModelElement(viewElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -173,17 +189,22 @@ public class CoreSwitch<T> extends Switch<T> {
 				if (result == null) result = caseContentBinding(dynamicBehavior);
 				if (result == null) result = caseViewComponentPart(dynamicBehavior);
 				if (result == null) result = caseInteractionFlowElement(dynamicBehavior);
-				if (result == null) result = caseNamedElement(dynamicBehavior);
 				if (result == null) result = caseInteractionFlowModelElement(dynamicBehavior);
+				if (result == null) result = caseIFMLNamedElement(dynamicBehavior);
 				if (result == null) result = caseElement(dynamicBehavior);
+				if (result == null) result = caseNamedElement(dynamicBehavior);
+				if (result == null) result = caseUML_Element(dynamicBehavior);
+				if (result == null) result = caseEModelElement(dynamicBehavior);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CorePackage.VIEWPOINT: {
 				Viewpoint viewpoint = (Viewpoint)theEObject;
 				T result = caseViewpoint(viewpoint);
+				if (result == null) result = caseIFMLNamedElement(viewpoint);
 				if (result == null) result = caseNamedElement(viewpoint);
-				if (result == null) result = caseElement(viewpoint);
+				if (result == null) result = caseUML_Element(viewpoint);
+				if (result == null) result = caseEModelElement(viewpoint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -200,9 +221,12 @@ public class CoreSwitch<T> extends Switch<T> {
 				ViewComponentPart viewComponentPart = (ViewComponentPart)theEObject;
 				T result = caseViewComponentPart(viewComponentPart);
 				if (result == null) result = caseInteractionFlowElement(viewComponentPart);
-				if (result == null) result = caseNamedElement(viewComponentPart);
 				if (result == null) result = caseInteractionFlowModelElement(viewComponentPart);
+				if (result == null) result = caseIFMLNamedElement(viewComponentPart);
 				if (result == null) result = caseElement(viewComponentPart);
+				if (result == null) result = caseNamedElement(viewComponentPart);
+				if (result == null) result = caseUML_Element(viewComponentPart);
+				if (result == null) result = caseEModelElement(viewComponentPart);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -211,9 +235,12 @@ public class CoreSwitch<T> extends Switch<T> {
 				T result = caseViewContainer(viewContainer);
 				if (result == null) result = caseViewElement(viewContainer);
 				if (result == null) result = caseInteractionFlowElement(viewContainer);
-				if (result == null) result = caseNamedElement(viewContainer);
 				if (result == null) result = caseInteractionFlowModelElement(viewContainer);
+				if (result == null) result = caseIFMLNamedElement(viewContainer);
 				if (result == null) result = caseElement(viewContainer);
+				if (result == null) result = caseNamedElement(viewContainer);
+				if (result == null) result = caseUML_Element(viewContainer);
+				if (result == null) result = caseEModelElement(viewContainer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -230,7 +257,6 @@ public class CoreSwitch<T> extends Switch<T> {
 			case CorePackage.INTERACTION_FLOW_MODEL: {
 				InteractionFlowModel interactionFlowModel = (InteractionFlowModel)theEObject;
 				T result = caseInteractionFlowModel(interactionFlowModel);
-				if (result == null) result = caseNamedElement(interactionFlowModel);
 				if (result == null) result = caseElement(interactionFlowModel);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -238,16 +264,20 @@ public class CoreSwitch<T> extends Switch<T> {
 			case CorePackage.CONTEXT_DIMENSION: {
 				ContextDimension contextDimension = (ContextDimension)theEObject;
 				T result = caseContextDimension(contextDimension);
+				if (result == null) result = caseIFMLNamedElement(contextDimension);
 				if (result == null) result = caseNamedElement(contextDimension);
-				if (result == null) result = caseElement(contextDimension);
+				if (result == null) result = caseUML_Element(contextDimension);
+				if (result == null) result = caseEModelElement(contextDimension);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CorePackage.IFML_MODEL: {
 				IFMLModel ifmlModel = (IFMLModel)theEObject;
 				T result = caseIFMLModel(ifmlModel);
+				if (result == null) result = caseIFMLNamedElement(ifmlModel);
 				if (result == null) result = caseNamedElement(ifmlModel);
-				if (result == null) result = caseElement(ifmlModel);
+				if (result == null) result = caseUML_Element(ifmlModel);
+				if (result == null) result = caseEModelElement(ifmlModel);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -255,9 +285,12 @@ public class CoreSwitch<T> extends Switch<T> {
 				ModuleDefinition moduleDefinition = (ModuleDefinition)theEObject;
 				T result = caseModuleDefinition(moduleDefinition);
 				if (result == null) result = caseModularizationElement(moduleDefinition);
-				if (result == null) result = caseNamedElement(moduleDefinition);
 				if (result == null) result = caseInteractionFlowModelElement(moduleDefinition);
+				if (result == null) result = caseIFMLNamedElement(moduleDefinition);
 				if (result == null) result = caseElement(moduleDefinition);
+				if (result == null) result = caseNamedElement(moduleDefinition);
+				if (result == null) result = caseUML_Element(moduleDefinition);
+				if (result == null) result = caseEModelElement(moduleDefinition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -273,9 +306,12 @@ public class CoreSwitch<T> extends Switch<T> {
 			case CorePackage.INTERACTION_FLOW_ELEMENT: {
 				InteractionFlowElement interactionFlowElement = (InteractionFlowElement)theEObject;
 				T result = caseInteractionFlowElement(interactionFlowElement);
-				if (result == null) result = caseNamedElement(interactionFlowElement);
 				if (result == null) result = caseInteractionFlowModelElement(interactionFlowElement);
+				if (result == null) result = caseIFMLNamedElement(interactionFlowElement);
 				if (result == null) result = caseElement(interactionFlowElement);
+				if (result == null) result = caseNamedElement(interactionFlowElement);
+				if (result == null) result = caseUML_Element(interactionFlowElement);
+				if (result == null) result = caseEModelElement(interactionFlowElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -283,9 +319,12 @@ public class CoreSwitch<T> extends Switch<T> {
 				IFMLAction ifmlAction = (IFMLAction)theEObject;
 				T result = caseIFMLAction(ifmlAction);
 				if (result == null) result = caseInteractionFlowElement(ifmlAction);
-				if (result == null) result = caseNamedElement(ifmlAction);
 				if (result == null) result = caseInteractionFlowModelElement(ifmlAction);
+				if (result == null) result = caseIFMLNamedElement(ifmlAction);
 				if (result == null) result = caseElement(ifmlAction);
+				if (result == null) result = caseNamedElement(ifmlAction);
+				if (result == null) result = caseUML_Element(ifmlAction);
+				if (result == null) result = caseEModelElement(ifmlAction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -327,9 +366,12 @@ public class CoreSwitch<T> extends Switch<T> {
 				T result = caseViewComponent(viewComponent);
 				if (result == null) result = caseViewElement(viewComponent);
 				if (result == null) result = caseInteractionFlowElement(viewComponent);
-				if (result == null) result = caseNamedElement(viewComponent);
 				if (result == null) result = caseInteractionFlowModelElement(viewComponent);
+				if (result == null) result = caseIFMLNamedElement(viewComponent);
 				if (result == null) result = caseElement(viewComponent);
+				if (result == null) result = caseNamedElement(viewComponent);
+				if (result == null) result = caseUML_Element(viewComponent);
+				if (result == null) result = caseEModelElement(viewComponent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -337,8 +379,12 @@ public class CoreSwitch<T> extends Switch<T> {
 				IFMLParameter ifmlParameter = (IFMLParameter)theEObject;
 				T result = caseIFMLParameter(ifmlParameter);
 				if (result == null) result = caseInteractionFlowModelElement(ifmlParameter);
-				if (result == null) result = caseNamedElement(ifmlParameter);
+				if (result == null) result = caseIFMLNamedElement(ifmlParameter);
+				if (result == null) result = caseTypedElement(ifmlParameter);
 				if (result == null) result = caseElement(ifmlParameter);
+				if (result == null) result = caseNamedElement(ifmlParameter);
+				if (result == null) result = caseUML_Element(ifmlParameter);
+				if (result == null) result = caseEModelElement(ifmlParameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -348,9 +394,12 @@ public class CoreSwitch<T> extends Switch<T> {
 				if (result == null) result = caseContentBinding(dataBinding);
 				if (result == null) result = caseViewComponentPart(dataBinding);
 				if (result == null) result = caseInteractionFlowElement(dataBinding);
-				if (result == null) result = caseNamedElement(dataBinding);
 				if (result == null) result = caseInteractionFlowModelElement(dataBinding);
+				if (result == null) result = caseIFMLNamedElement(dataBinding);
 				if (result == null) result = caseElement(dataBinding);
+				if (result == null) result = caseNamedElement(dataBinding);
+				if (result == null) result = caseUML_Element(dataBinding);
+				if (result == null) result = caseEModelElement(dataBinding);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -361,8 +410,11 @@ public class CoreSwitch<T> extends Switch<T> {
 				if (result == null) result = caseViewComponentPart(conditionalExpression);
 				if (result == null) result = caseInteractionFlowElement(conditionalExpression);
 				if (result == null) result = caseInteractionFlowModelElement(conditionalExpression);
-				if (result == null) result = caseNamedElement(conditionalExpression);
 				if (result == null) result = caseElement(conditionalExpression);
+				if (result == null) result = caseIFMLNamedElement(conditionalExpression);
+				if (result == null) result = caseNamedElement(conditionalExpression);
+				if (result == null) result = caseUML_Element(conditionalExpression);
+				if (result == null) result = caseEModelElement(conditionalExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -378,9 +430,12 @@ public class CoreSwitch<T> extends Switch<T> {
 				T result = caseVisualizationAttribute(visualizationAttribute);
 				if (result == null) result = caseViewComponentPart(visualizationAttribute);
 				if (result == null) result = caseInteractionFlowElement(visualizationAttribute);
-				if (result == null) result = caseNamedElement(visualizationAttribute);
 				if (result == null) result = caseInteractionFlowModelElement(visualizationAttribute);
+				if (result == null) result = caseIFMLNamedElement(visualizationAttribute);
 				if (result == null) result = caseElement(visualizationAttribute);
+				if (result == null) result = caseNamedElement(visualizationAttribute);
+				if (result == null) result = caseUML_Element(visualizationAttribute);
+				if (result == null) result = caseEModelElement(visualizationAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -388,9 +443,12 @@ public class CoreSwitch<T> extends Switch<T> {
 				Event event = (Event)theEObject;
 				T result = caseEvent(event);
 				if (result == null) result = caseInteractionFlowElement(event);
-				if (result == null) result = caseNamedElement(event);
 				if (result == null) result = caseInteractionFlowModelElement(event);
+				if (result == null) result = caseIFMLNamedElement(event);
 				if (result == null) result = caseElement(event);
+				if (result == null) result = caseNamedElement(event);
+				if (result == null) result = caseUML_Element(event);
+				if (result == null) result = caseEModelElement(event);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -407,9 +465,12 @@ public class CoreSwitch<T> extends Switch<T> {
 				if (result == null) result = caseCatchingEvent(viewElementEvent);
 				if (result == null) result = caseEvent(viewElementEvent);
 				if (result == null) result = caseInteractionFlowElement(viewElementEvent);
-				if (result == null) result = caseNamedElement(viewElementEvent);
 				if (result == null) result = caseInteractionFlowModelElement(viewElementEvent);
+				if (result == null) result = caseIFMLNamedElement(viewElementEvent);
 				if (result == null) result = caseElement(viewElementEvent);
+				if (result == null) result = caseNamedElement(viewElementEvent);
+				if (result == null) result = caseUML_Element(viewElementEvent);
+				if (result == null) result = caseEModelElement(viewElementEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -423,18 +484,24 @@ public class CoreSwitch<T> extends Switch<T> {
 				ModulePackage modulePackage = (ModulePackage)theEObject;
 				T result = caseModulePackage(modulePackage);
 				if (result == null) result = caseModularizationElement(modulePackage);
-				if (result == null) result = caseNamedElement(modulePackage);
 				if (result == null) result = caseInteractionFlowModelElement(modulePackage);
+				if (result == null) result = caseIFMLNamedElement(modulePackage);
 				if (result == null) result = caseElement(modulePackage);
+				if (result == null) result = caseNamedElement(modulePackage);
+				if (result == null) result = caseUML_Element(modulePackage);
+				if (result == null) result = caseEModelElement(modulePackage);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CorePackage.MODULARIZATION_ELEMENT: {
 				ModularizationElement modularizationElement = (ModularizationElement)theEObject;
 				T result = caseModularizationElement(modularizationElement);
-				if (result == null) result = caseNamedElement(modularizationElement);
 				if (result == null) result = caseInteractionFlowModelElement(modularizationElement);
+				if (result == null) result = caseIFMLNamedElement(modularizationElement);
 				if (result == null) result = caseElement(modularizationElement);
+				if (result == null) result = caseNamedElement(modularizationElement);
+				if (result == null) result = caseUML_Element(modularizationElement);
+				if (result == null) result = caseEModelElement(modularizationElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -442,9 +509,12 @@ public class CoreSwitch<T> extends Switch<T> {
 				IFMLModule ifmlModule = (IFMLModule)theEObject;
 				T result = caseIFMLModule(ifmlModule);
 				if (result == null) result = caseInteractionFlowElement(ifmlModule);
-				if (result == null) result = caseNamedElement(ifmlModule);
 				if (result == null) result = caseInteractionFlowModelElement(ifmlModule);
+				if (result == null) result = caseIFMLNamedElement(ifmlModule);
 				if (result == null) result = caseElement(ifmlModule);
+				if (result == null) result = caseNamedElement(ifmlModule);
+				if (result == null) result = caseUML_Element(ifmlModule);
+				if (result == null) result = caseEModelElement(ifmlModule);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -452,9 +522,12 @@ public class CoreSwitch<T> extends Switch<T> {
 				IFMLPort ifmlPort = (IFMLPort)theEObject;
 				T result = caseIFMLPort(ifmlPort);
 				if (result == null) result = caseInteractionFlowElement(ifmlPort);
-				if (result == null) result = caseNamedElement(ifmlPort);
 				if (result == null) result = caseInteractionFlowModelElement(ifmlPort);
+				if (result == null) result = caseIFMLNamedElement(ifmlPort);
 				if (result == null) result = caseElement(ifmlPort);
+				if (result == null) result = caseNamedElement(ifmlPort);
+				if (result == null) result = caseUML_Element(ifmlPort);
+				if (result == null) result = caseEModelElement(ifmlPort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -463,9 +536,12 @@ public class CoreSwitch<T> extends Switch<T> {
 				T result = caseCatchingEvent(catchingEvent);
 				if (result == null) result = caseEvent(catchingEvent);
 				if (result == null) result = caseInteractionFlowElement(catchingEvent);
-				if (result == null) result = caseNamedElement(catchingEvent);
 				if (result == null) result = caseInteractionFlowModelElement(catchingEvent);
+				if (result == null) result = caseIFMLNamedElement(catchingEvent);
 				if (result == null) result = caseElement(catchingEvent);
+				if (result == null) result = caseNamedElement(catchingEvent);
+				if (result == null) result = caseUML_Element(catchingEvent);
+				if (result == null) result = caseEModelElement(catchingEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -474,9 +550,12 @@ public class CoreSwitch<T> extends Switch<T> {
 				T result = caseThrowingEvent(throwingEvent);
 				if (result == null) result = caseEvent(throwingEvent);
 				if (result == null) result = caseInteractionFlowElement(throwingEvent);
-				if (result == null) result = caseNamedElement(throwingEvent);
 				if (result == null) result = caseInteractionFlowModelElement(throwingEvent);
+				if (result == null) result = caseIFMLNamedElement(throwingEvent);
 				if (result == null) result = caseElement(throwingEvent);
+				if (result == null) result = caseNamedElement(throwingEvent);
+				if (result == null) result = caseUML_Element(throwingEvent);
+				if (result == null) result = caseEModelElement(throwingEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -484,16 +563,20 @@ public class CoreSwitch<T> extends Switch<T> {
 				BPMNActivityConcept bpmnActivityConcept = (BPMNActivityConcept)theEObject;
 				T result = caseBPMNActivityConcept(bpmnActivityConcept);
 				if (result == null) result = caseActivityConcept(bpmnActivityConcept);
+				if (result == null) result = caseIFMLNamedElement(bpmnActivityConcept);
 				if (result == null) result = caseNamedElement(bpmnActivityConcept);
-				if (result == null) result = caseElement(bpmnActivityConcept);
+				if (result == null) result = caseUML_Element(bpmnActivityConcept);
+				if (result == null) result = caseEModelElement(bpmnActivityConcept);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CorePackage.CONTEXT_VARIABLE: {
 				ContextVariable contextVariable = (ContextVariable)theEObject;
 				T result = caseContextVariable(contextVariable);
+				if (result == null) result = caseIFMLNamedElement(contextVariable);
 				if (result == null) result = caseNamedElement(contextVariable);
-				if (result == null) result = caseElement(contextVariable);
+				if (result == null) result = caseUML_Element(contextVariable);
+				if (result == null) result = caseEModelElement(contextVariable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -501,8 +584,10 @@ public class CoreSwitch<T> extends Switch<T> {
 				SimpleContextVariable simpleContextVariable = (SimpleContextVariable)theEObject;
 				T result = caseSimpleContextVariable(simpleContextVariable);
 				if (result == null) result = caseContextVariable(simpleContextVariable);
+				if (result == null) result = caseIFMLNamedElement(simpleContextVariable);
 				if (result == null) result = caseNamedElement(simpleContextVariable);
-				if (result == null) result = caseElement(simpleContextVariable);
+				if (result == null) result = caseUML_Element(simpleContextVariable);
+				if (result == null) result = caseEModelElement(simpleContextVariable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -510,8 +595,10 @@ public class CoreSwitch<T> extends Switch<T> {
 				DataContextVariable dataContextVariable = (DataContextVariable)theEObject;
 				T result = caseDataContextVariable(dataContextVariable);
 				if (result == null) result = caseContextVariable(dataContextVariable);
+				if (result == null) result = caseIFMLNamedElement(dataContextVariable);
 				if (result == null) result = caseNamedElement(dataContextVariable);
-				if (result == null) result = caseElement(dataContextVariable);
+				if (result == null) result = caseUML_Element(dataContextVariable);
+				if (result == null) result = caseEModelElement(dataContextVariable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -519,8 +606,10 @@ public class CoreSwitch<T> extends Switch<T> {
 				DomainConcept domainConcept = (DomainConcept)theEObject;
 				T result = caseDomainConcept(domainConcept);
 				if (result == null) result = caseDomainElement(domainConcept);
+				if (result == null) result = caseIFMLNamedElement(domainConcept);
 				if (result == null) result = caseNamedElement(domainConcept);
-				if (result == null) result = caseElement(domainConcept);
+				if (result == null) result = caseUML_Element(domainConcept);
+				if (result == null) result = caseEModelElement(domainConcept);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -528,8 +617,10 @@ public class CoreSwitch<T> extends Switch<T> {
 				FeatureConcept featureConcept = (FeatureConcept)theEObject;
 				T result = caseFeatureConcept(featureConcept);
 				if (result == null) result = caseDomainElement(featureConcept);
+				if (result == null) result = caseIFMLNamedElement(featureConcept);
 				if (result == null) result = caseNamedElement(featureConcept);
-				if (result == null) result = caseElement(featureConcept);
+				if (result == null) result = caseUML_Element(featureConcept);
+				if (result == null) result = caseEModelElement(featureConcept);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -537,8 +628,10 @@ public class CoreSwitch<T> extends Switch<T> {
 				BehaviorConcept behaviorConcept = (BehaviorConcept)theEObject;
 				T result = caseBehaviorConcept(behaviorConcept);
 				if (result == null) result = caseDomainElement(behaviorConcept);
+				if (result == null) result = caseIFMLNamedElement(behaviorConcept);
 				if (result == null) result = caseNamedElement(behaviorConcept);
-				if (result == null) result = caseElement(behaviorConcept);
+				if (result == null) result = caseUML_Element(behaviorConcept);
+				if (result == null) result = caseEModelElement(behaviorConcept);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -546,8 +639,10 @@ public class CoreSwitch<T> extends Switch<T> {
 				BehavioralFeatureConcept behavioralFeatureConcept = (BehavioralFeatureConcept)theEObject;
 				T result = caseBehavioralFeatureConcept(behavioralFeatureConcept);
 				if (result == null) result = caseDomainElement(behavioralFeatureConcept);
+				if (result == null) result = caseIFMLNamedElement(behavioralFeatureConcept);
 				if (result == null) result = caseNamedElement(behavioralFeatureConcept);
-				if (result == null) result = caseElement(behavioralFeatureConcept);
+				if (result == null) result = caseUML_Element(behavioralFeatureConcept);
+				if (result == null) result = caseEModelElement(behavioralFeatureConcept);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -556,8 +651,10 @@ public class CoreSwitch<T> extends Switch<T> {
 				T result = caseUMLBehavior(umlBehavior);
 				if (result == null) result = caseBehaviorConcept(umlBehavior);
 				if (result == null) result = caseDomainElement(umlBehavior);
+				if (result == null) result = caseIFMLNamedElement(umlBehavior);
 				if (result == null) result = caseNamedElement(umlBehavior);
-				if (result == null) result = caseElement(umlBehavior);
+				if (result == null) result = caseUML_Element(umlBehavior);
+				if (result == null) result = caseEModelElement(umlBehavior);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -566,8 +663,10 @@ public class CoreSwitch<T> extends Switch<T> {
 				T result = caseUMLBehavioralFeature(umlBehavioralFeature);
 				if (result == null) result = caseBehavioralFeatureConcept(umlBehavioralFeature);
 				if (result == null) result = caseDomainElement(umlBehavioralFeature);
+				if (result == null) result = caseIFMLNamedElement(umlBehavioralFeature);
 				if (result == null) result = caseNamedElement(umlBehavioralFeature);
-				if (result == null) result = caseElement(umlBehavioralFeature);
+				if (result == null) result = caseUML_Element(umlBehavioralFeature);
+				if (result == null) result = caseEModelElement(umlBehavioralFeature);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -576,8 +675,10 @@ public class CoreSwitch<T> extends Switch<T> {
 				T result = caseUMLDomainConcept(umlDomainConcept);
 				if (result == null) result = caseDomainConcept(umlDomainConcept);
 				if (result == null) result = caseDomainElement(umlDomainConcept);
+				if (result == null) result = caseIFMLNamedElement(umlDomainConcept);
 				if (result == null) result = caseNamedElement(umlDomainConcept);
-				if (result == null) result = caseElement(umlDomainConcept);
+				if (result == null) result = caseUML_Element(umlDomainConcept);
+				if (result == null) result = caseEModelElement(umlDomainConcept);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -586,24 +687,39 @@ public class CoreSwitch<T> extends Switch<T> {
 				T result = caseUMLStructuralFeature(umlStructuralFeature);
 				if (result == null) result = caseFeatureConcept(umlStructuralFeature);
 				if (result == null) result = caseDomainElement(umlStructuralFeature);
+				if (result == null) result = caseIFMLNamedElement(umlStructuralFeature);
 				if (result == null) result = caseNamedElement(umlStructuralFeature);
-				if (result == null) result = caseElement(umlStructuralFeature);
+				if (result == null) result = caseUML_Element(umlStructuralFeature);
+				if (result == null) result = caseEModelElement(umlStructuralFeature);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CorePackage.ACTIVITY_CONCEPT: {
 				ActivityConcept activityConcept = (ActivityConcept)theEObject;
 				T result = caseActivityConcept(activityConcept);
+				if (result == null) result = caseIFMLNamedElement(activityConcept);
 				if (result == null) result = caseNamedElement(activityConcept);
-				if (result == null) result = caseElement(activityConcept);
+				if (result == null) result = caseUML_Element(activityConcept);
+				if (result == null) result = caseEModelElement(activityConcept);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CorePackage.DOMAIN_ELEMENT: {
 				DomainElement domainElement = (DomainElement)theEObject;
 				T result = caseDomainElement(domainElement);
+				if (result == null) result = caseIFMLNamedElement(domainElement);
 				if (result == null) result = caseNamedElement(domainElement);
-				if (result == null) result = caseElement(domainElement);
+				if (result == null) result = caseUML_Element(domainElement);
+				if (result == null) result = caseEModelElement(domainElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CorePackage.IFML_NAMED_ELEMENT: {
+				IFMLNamedElement ifmlNamedElement = (IFMLNamedElement)theEObject;
+				T result = caseIFMLNamedElement(ifmlNamedElement);
+				if (result == null) result = caseNamedElement(ifmlNamedElement);
+				if (result == null) result = caseUML_Element(ifmlNamedElement);
+				if (result == null) result = caseEModelElement(ifmlNamedElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -698,21 +814,6 @@ public class CoreSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDomainModel(DomainModel object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseNamedElement(NamedElement object) {
 		return null;
 	}
 
@@ -1478,6 +1579,81 @@ public class CoreSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDomainElement(DomainElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IFML Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IFML Named Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIFMLNamedElement(IFMLNamedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EModel Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EModel Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEModelElement(EModelElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUML_Element(org.eclipse.uml2.uml.Element object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNamedElement(NamedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Typed Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Typed Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTypedElement(TypedElement object) {
 		return null;
 	}
 

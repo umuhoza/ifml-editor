@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class DomainElementImpl extends NamedElementImpl implements DomainElement {
+public class DomainElementImpl extends IFMLNamedElementImpl implements DomainElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

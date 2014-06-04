@@ -13,5 +13,5 @@ package IFML.Core;
  * @model
  * @generated
  */
-public interface ContextDimension extends NamedElement {
+public interface ContextDimension extends IFMLNamedElement {
 } // ContextDimension

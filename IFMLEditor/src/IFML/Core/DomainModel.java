@@ -20,13 +20,13 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface DomainModel extends NamedElement {
+public interface DomainModel extends IFMLNamedElement {
 	/**
 	 * Returns the value of the '<em><b>Domain Elements</b></em>' containment reference list.
 	 * The list contents are of type {@link IFML.Core.DomainElement}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Domain Elements</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Domain Elements</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->

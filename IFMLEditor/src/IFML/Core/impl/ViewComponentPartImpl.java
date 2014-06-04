@@ -242,7 +242,7 @@ public class ViewComponentPartImpl extends InteractionFlowElementImpl implements
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-		@Override
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.VIEW_COMPONENT_PART__VIEW_ELEMENT_EVENTS:

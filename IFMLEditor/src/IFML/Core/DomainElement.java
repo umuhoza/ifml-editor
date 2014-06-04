@@ -13,5 +13,5 @@ package IFML.Core;
  * @model
  * @generated
  */
-public interface DomainElement extends NamedElement {
+public interface DomainElement extends IFMLNamedElement {
 } // DomainElement
